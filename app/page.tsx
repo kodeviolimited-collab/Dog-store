@@ -12,6 +12,7 @@ import { CardDetailView } from '@/components/CardDetailView';
 import { PedigreeView } from '@/components/PedigreeView';
 import { DNAView } from '@/components/DNAView';
 import { NotificationsView } from '@/components/NotificationsView';
+import { MessagesView } from '@/components/MessagesView';
 import { WelcomeView } from '@/components/WelcomeView';
 import { AuthView } from '@/components/AuthView';
 import { motion, AnimatePresence } from 'motion/react';
@@ -23,6 +24,7 @@ export default function Home() {
   const [viewingPedigree, setViewingPedigree] = useState(false);
   const [viewingDNA, setViewingDNA] = useState(false);
   const [viewingNotifications, setViewingNotifications] = useState(false);
+  const [viewingMessages, setViewingMessages] = useState(false);
 
   const renderContent = () => {
     if (appState === 'welcome') {
@@ -31,6 +33,10 @@ export default function Home() {
 
     if (appState === 'auth') {
       return <AuthView onAuthSuccess={() => setAppState('main')} onBack={() => setAppState('welcome')} />;
+    }
+
+    if (viewingMessages) {
+      return <MessagesView onBack={() => setViewingMessages(false)} />;
     }
 
     if (viewingNotifications) {
@@ -69,8 +75,11 @@ export default function Home() {
     <div className="flex justify-center bg-black min-h-screen">
       {/* Mobile Container */}
       <div className="w-full max-w-md bg-brand-dark min-h-screen relative shadow-2xl overflow-x-hidden">
-        {appState === 'main' && !selectedDog && !viewingPedigree && !viewingDNA && !viewingNotifications && (
-          <Header onNotificationClick={() => setViewingNotifications(true)} />
+        {appState === 'main' && !selectedDog && !viewingPedigree && !viewingDNA && !viewingNotifications && !viewingMessages && (
+          <Header 
+            onNotificationClick={() => setViewingNotifications(true)} 
+            onMessageClick={() => setViewingMessages(true)}
+          />
         )}
         
         <main className="flex-1">
@@ -87,7 +96,7 @@ export default function Home() {
           </AnimatePresence>
         </main>
 
-        {appState === 'main' && !selectedDog && (
+        {appState === 'main' && !selectedDog && !viewingMessages && (
           <MobileNav activeTab={activeTab} setActiveTab={setActiveTab} />
         )}
 

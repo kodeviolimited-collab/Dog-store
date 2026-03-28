@@ -18,7 +18,7 @@ const PedigreeNode: React.FC<PedigreeNodeProps> = ({ name, rarity, img, label, c
     <span className="text-[7px] font-black uppercase tracking-[0.2em] text-white/40 mb-1">{label}</span>
     <div className={`relative w-20 aspect-[3/4] rounded-lg overflow-hidden border-2 bg-black/40 ${color} shadow-lg`}>
       <Image
-        src={`https://picsum.photos/seed/${img}/300/400`}
+        src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=300&h=400"
         alt={name}
         fill
         className="object-cover opacity-80"

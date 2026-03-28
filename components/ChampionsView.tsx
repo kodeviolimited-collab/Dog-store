@@ -15,7 +15,7 @@ const ChampionItem = ({ rank, name, bloodline, points, img, trend }: any) => (
     </div>
     <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/10 shadow-inner">
       <Image
-        src={`https://picsum.photos/seed/${img}/100/100`}
+        src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=100&h=100"
         alt={name}
         fill
         className="object-cover"
@@ -56,7 +56,7 @@ export const ChampionsView = () => {
         <div className="flex flex-col items-center gap-2 flex-1">
           <div className="relative w-16 h-16 rounded-full border-2 border-slate-300 p-1 bg-black/40 shadow-[0_0_15px_rgba(203,213,225,0.2)]">
             <div className="relative w-full h-full rounded-full overflow-hidden">
-              <Image src="https://picsum.photos/seed/dog2/100/100" alt="2nd" fill className="object-cover" referrerPolicy="no-referrer" />
+              <Image src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=100&h=100" alt="2nd" fill className="object-cover" referrerPolicy="no-referrer" />
             </div>
           </div>
           <div className="w-full h-20 bg-gradient-to-t from-slate-300/20 to-transparent rounded-t-xl border-x border-t border-slate-300/30 flex items-center justify-center relative">
@@ -70,7 +70,7 @@ export const ChampionsView = () => {
           <Crown className="w-8 h-8 text-brand-gold animate-bounce drop-shadow-[0_0_10px_rgba(245,197,66,0.8)]" />
           <div className="relative w-24 h-24 rounded-full border-4 border-brand-gold p-1 shadow-[0_0_30px_rgba(245,197,66,0.4)] bg-black/40">
             <div className="relative w-full h-full rounded-full overflow-hidden">
-              <Image src="https://picsum.photos/seed/dog1/100/100" alt="1st" fill className="object-cover" referrerPolicy="no-referrer" />
+              <Image src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=100&h=100" alt="1st" fill className="object-cover" referrerPolicy="no-referrer" />
             </div>
           </div>
           <div className="w-full h-28 bg-gradient-to-t from-brand-gold/20 to-transparent rounded-t-xl border-x border-t border-brand-gold/40 flex items-center justify-center relative">
@@ -83,7 +83,7 @@ export const ChampionsView = () => {
         <div className="flex flex-col items-center gap-2 flex-1">
           <div className="relative w-16 h-16 rounded-full border-2 border-brand-red p-1 bg-black/40 shadow-[0_0_15px_rgba(255,59,59,0.2)]">
             <div className="relative w-full h-full rounded-full overflow-hidden">
-              <Image src="https://picsum.photos/seed/dog3/100/100" alt="3rd" fill className="object-cover" referrerPolicy="no-referrer" />
+              <Image src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&q=80&w=100&h=100" alt="3rd" fill className="object-cover" referrerPolicy="no-referrer" />
             </div>
           </div>
           <div className="w-full h-16 bg-gradient-to-t from-brand-red/20 to-transparent rounded-t-xl border-x border-t border-brand-red/30 flex items-center justify-center relative">

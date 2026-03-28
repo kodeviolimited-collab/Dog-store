@@ -41,7 +41,7 @@ export const CardDetailView = ({ onBack }: { onBack: () => void }) => {
             {/* Front Side */}
             <div className="absolute inset-0 backface-hidden rounded-[2rem] overflow-hidden border-4 border-brand-gold shadow-[0_0_40px_rgba(245,197,66,0.2)] bg-black">
               <Image
-                src="https://picsum.photos/seed/titan-card/800/1200"
+                src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=800&h=1200"
                 alt="Titan"
                 fill
                 className="object-cover opacity-80"

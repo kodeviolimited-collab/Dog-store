@@ -7,72 +7,85 @@ import { ShieldCheck, MapPin, MessageSquare, Plus, Users, LayoutGrid, Trophy, Gl
 
 export const ProfileView = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-brand-dark pb-24 relative overflow-hidden gaming-grid">
+    <div className="flex flex-col min-h-screen bg-brand-dark pb-24 relative overflow-hidden gaming-grid hex-grid">
+      <div className="digital-noise absolute inset-0 pointer-events-none" />
       <div className="scanline pointer-events-none" />
       
       {/* Profile Header Banner */}
-      <div className="relative h-64 w-full overflow-hidden">
+      <div className="relative h-72 w-full overflow-hidden metallic-border border-b border-white/10">
+        <div className="hud-corner hud-tl" />
+        <div className="hud-corner hud-tr" />
+        <div className="absolute top-6 left-8 z-20 flex flex-col gap-1">
+          <span className="micro-label text-brand-gold/60">DOSSIER_ID: RBC-TX-09</span>
+          <span className="micro-label text-brand-gold/60">CLEARANCE: LEVEL_4_ALPHA</span>
+        </div>
         <Image
-          src="https://picsum.photos/seed/kennel-bg/1200/400"
+          src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=1200&h=400"
           alt="Banner"
           fill
-          className="object-cover opacity-50 scale-105"
+          className="object-cover opacity-40 scale-105 transition-transform duration-1000"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent" />
-        <div className="absolute inset-0 bg-brand-red/10 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-transparent" />
+        <div className="scanline pointer-events-none" />
         
         {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-full border-b border-brand-gold/20" />
-        <div className="absolute bottom-4 left-6 flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-brand-red animate-pulse shadow-[0_0_8px_rgba(255,59,59,0.8)]" />
-          <span className="text-[8px] font-black uppercase tracking-[0.3em] text-brand-red">System Online</span>
+        <div className="absolute bottom-6 left-8 flex items-center gap-3">
+          <div className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse shadow-[0_0_12px_rgba(230,30,30,0.8)]" />
+          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-red">Operator Online</span>
         </div>
       </div>
 
-      <div className="px-6 -mt-24 relative z-10">
-        <div className="flex items-end gap-5 mb-8">
+      <div className="px-6 -mt-28 relative z-10">
+        <div className="flex items-end gap-6 mb-10">
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-br from-brand-gold to-brand-red rounded-3xl blur opacity-40 group-hover:opacity-60 transition-opacity" />
-            <div className="w-32 h-32 rounded-2xl border-2 border-brand-gold/40 overflow-hidden shadow-2xl relative bg-brand-dark">
-              <Image
-                src="https://picsum.photos/seed/breeder-avatar/200/200"
-                alt="Avatar"
-                fill
-                className="object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <div className="absolute -inset-1.5 bg-gradient-to-br from-brand-gold via-brand-red to-brand-blue rounded-3xl blur opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
+            <div className="w-36 h-36 rounded-2xl border-2 border-brand-gold/40 overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.8)] relative bg-brand-dark p-1">
+              <div className="w-full h-full rounded-xl overflow-hidden relative">
+                <Image
+                  src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=200&h=200"
+                  alt="Avatar"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              </div>
             </div>
-            <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-lg bg-brand-gold flex items-center justify-center shadow-lg border border-black/20">
-              <ShieldCheck className="w-6 h-6 text-black" />
+            <div className="absolute -bottom-2 -right-2 w-11 h-11 rounded-xl premium-gradient-gold flex items-center justify-center shadow-[0_0_20px_rgba(245,197,66,0.4)] border border-black/20">
+              <ShieldCheck className="w-7 h-7 text-black" />
             </div>
           </div>
           
-          <div className="flex-1 pb-2">
-            <div className="flex items-center gap-2 mb-1">
-              <h2 className="text-3xl font-black uppercase tracking-tighter italic text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">Royal Bully Camp</h2>
+          <div className="flex-1 pb-4">
+            <div className="flex items-center gap-3 mb-2">
+              <h2 className="text-4xl font-black uppercase tracking-tighter italic text-white neon-text-gold">Royal Bully Camp</h2>
             </div>
-            <div className="flex items-center gap-2 text-brand-gold/60">
-              <MapPin className="w-3 h-3" />
-              <span className="text-[10px] font-black uppercase tracking-[0.2em]">Sector: Texas, USA</span>
+            <div className="flex items-center gap-3 text-brand-gold/60">
+              <MapPin className="w-3.5 h-3.5" />
+              <span className="text-[11px] font-black uppercase tracking-[0.3em]">Sector: Texas, USA</span>
             </div>
           </div>
         </div>
 
         {/* Stats Row */}
-        <div className="grid grid-cols-3 gap-3 mb-8">
-          {[
-            { label: 'Champions', value: '14', color: 'brand-gold' },
-            { label: 'Lineage', value: '27', color: 'brand-red' },
-            { label: 'Followers', value: '7.1k', color: 'white' }
-          ].map((stat) => (
-            <div key={stat.label} className="gaming-card p-4 text-center relative group overflow-hidden">
-              <div className={`absolute top-0 left-0 w-full h-[1px] bg-${stat.color}/40`} />
-              <p className={`text-xl font-black italic text-${stat.color} drop-shadow-[0_0_8px_rgba(245,197,66,0.2)]`}>{stat.value}</p>
-              <p className="text-[8px] text-white/40 uppercase font-black tracking-widest mt-1">{stat.label}</p>
-            </div>
-          ))}
+        <div className="hud-frame p-1 rounded-2xl mb-10 metallic-border">
+          <div className="hud-corner hud-tl" />
+          <div className="hud-corner hud-tr" />
+          <div className="hud-corner hud-bl" />
+          <div className="hud-corner hud-br" />
+          <div className="grid grid-cols-3 gap-1 bg-white/5 rounded-xl overflow-hidden">
+            {[
+              { label: 'Champions', value: '14', color: 'brand-gold' },
+              { label: 'Lineage', value: '27', color: 'brand-red' },
+              { label: 'Followers', value: '7.1k', color: 'white' }
+            ].map((stat, idx) => (
+              <div key={stat.label} className={`py-6 text-center relative group overflow-hidden ${idx !== 2 ? 'border-r border-white/5' : ''}`}>
+                <p className={`text-2xl font-black italic text-${stat.color} drop-shadow-[0_0_10px_rgba(245,197,66,0.2)] tracking-tighter`}>{stat.value}</p>
+                <p className="text-[9px] text-white/30 uppercase font-black tracking-[0.2em] mt-1">{stat.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Bio Section */}
@@ -83,9 +96,9 @@ export const ProfileView = () => {
             Breeder Dossier
           </h3>
           <p className="text-xs leading-relaxed text-white/70 font-medium italic">
-            "Specializing in extreme pocket bullies with world-class temperaments and structure. 
+            &quot;Specializing in extreme pocket bullies with world-class temperaments and structure. 
             Over 15 years of dedicated breeding excellence in the heart of Texas. 
-            Home of the legendary Titan and Venom bloodlines. We don't just breed dogs, we forge legacies."
+            Home of the legendary Titan and Venom bloodlines. We don&apos;t just breed dogs, we forge legacies.&quot;
           </p>
         </div>
 
@@ -153,14 +166,14 @@ export const ProfileView = () => {
 
         <div className="grid grid-cols-2 gap-5 mb-8">
           {[
-            { name: 'TITAN', rarity: 'Legendary', score: 95, img: 'titan', color: 'brand-gold' },
-            { name: 'VENOM JR', rarity: 'Elite', score: 93, img: 'venomjr', color: 'brand-red' },
-            { name: 'GHOST', rarity: 'Rare', score: 88, img: 'ghost', color: 'white' },
-            { name: 'RUBY', rarity: 'Elite', score: 91, img: 'ruby', color: 'brand-red' }
+            { name: 'TITAN', rarity: 'Legendary', score: 95, img: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=400&h=600', color: 'brand-gold' },
+            { name: 'VENOM JR', rarity: 'Elite', score: 93, img: 'https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?auto=format&fit=crop&q=80&w=400&h=600', color: 'brand-red' },
+            { name: 'GHOST', rarity: 'Rare', score: 88, img: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=400&h=600', color: 'white' },
+            { name: 'RUBY', rarity: 'Elite', score: 91, img: 'https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?auto=format&fit=crop&q=80&w=400&h=600', color: 'brand-red' }
           ].map((dog) => (
             <div key={dog.name} className="gaming-card aspect-[3/4] relative group overflow-hidden cursor-pointer">
               <Image
-                src={`https://picsum.photos/seed/${dog.img}/400/600`}
+                src={dog.img}
                 alt={dog.name}
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
